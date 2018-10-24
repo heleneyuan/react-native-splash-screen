@@ -23,4 +23,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile "com.facebook.react:react-native:+" // From node_modules
+
+    compile 'com.felipecsl:gifimageview:2.2.0'
+    compile 'commons-io:commons-io:2.4'
 }

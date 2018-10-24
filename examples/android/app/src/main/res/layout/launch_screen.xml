@@ -4,5 +4,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/launch_screen"
     android:orientation="vertical">
-
+    <com.felipecsl.gifimageview.library.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="350dp"
+        android:layout_height="541dp"
+        android:scaleType="center"
+        />
 </LinearLayout>

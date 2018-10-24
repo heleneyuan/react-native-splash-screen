@@ -6,6 +6,13 @@ import android.os.Build;
 
 import java.lang.ref.WeakReference;
 
+import com.felipecsl.gifimageview.library.GifImageView;
+
+import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * SplashScreen
  * 启动屏
@@ -24,6 +31,19 @@ public class SplashScreen {
     public static void show(final Activity activity, final int themeResId) {
         if (activity == null) return;
         mActivity = new WeakReference<Activity>(activity);
+        gifImageView = (GifImageView)findViewById(R.id.gifImageView);
+
+
+        try{
+            InputStream inputStream = getAssets().open("splash.gif");
+            byte[] bytes = IOUtils.toByteArray(inputStream);
+            gifImageView.setBytes(bytes);
+            gifImageView.startAnimation();
+
+
+        }catch (IOException ex){
+
+        }
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
